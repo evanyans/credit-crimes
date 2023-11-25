@@ -1,0 +1,31 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1700945060
+case.gd::GDScript::-1::1700933897::0::1::::<>Node2D<>::
+font.tres::Theme::3382714159967442066::1700944584::0::1::::<><>::uid://b800ksxonanyb::::res://fonts/tinypixel.otf
+game.gd::GDScript::-1::1700943938::0::1::::<>Node2D<>::
+game.tscn::PackedScene::1665007287815215535::1700944699::0::1::::<><>::res://game.gd<>uid://bc2x2vq2y53sx::::res://paper_getter.tscn<>uid://o4dlek05oo0q::::res://background/bg_empty_bar.png<>uid://bo577qp2ib5dj::::res://progressbar/emptyprogress.png<>uid://dhxc37qvp1h0t::::res://progressbar/progress.png<>uid://bogu2qbnnilwk::::res://font.tres<>uid://rdemom264ym::::res://shrink_zone.tscn<>uid://scagkruh76y0::::res://background/offlaptop.png
+icon.svg::CompressedTexture2D::4030869774413575310::1700893657::1700945061::1::::<><>::
+paper_getter.gd::GDScript::-1::1700919739::0::1::::<>Area2D<>::
+paper_getter.tscn::PackedScene::2583982406565104955::1700944699::0::1::::<><>::res://paper_getter.gd
+README.md::TextFile::-1::1700944946::0::1::::<><>::
+shrink_zone.tscn::PackedScene::35284368462957656::1700944699::0::1::::<><>::
+::res://background/::1700943895
+bg_empty_bar.png::CompressedTexture2D::1042712787229427850::1700943632::1700945061::1::::<><>::
+offlaptop.png::CompressedTexture2D::1267539208170665589::1700943803::1700945061::1::::<><>::
+::res://cases/::1700944073
+case1.tscn::PackedScene::3314819245486862676::1700944073::0::1::::<><>::res://case.gd<>uid://c5shsfimtj5cl::::res://paper/paper.tscn
+case2.tscn::PackedScene::6016277583056546911::1700944073::0::1::::<><>::res://case.gd<>uid://c5shsfimtj5cl::::res://paper/paper.tscn
+::res://fonts/::1700922273
+monogram.ttf::FontFile::8866431726536465079::1700921806::1700945061::1::::<><>::
+Silver.ttf::FontFile::2957381549091845980::1700920574::1700945061::1::::<><>::
+tinypixel.otf::FontFile::4755798731962162997::1700922273::1700945061::1::::<><>::
+::res://paper/::1700944886
+blankwhitepaper (1).png::CompressedTexture2D::9191228194143727526::1700944286::1700945061::1::::<><>::
+Paper.gd::GDScript::-1::1700944618::0::1::::<>CharacterBody2D<>::
+paper.tscn::PackedScene::6916122914886092991::1700944886::0::1::::<><>::res://paper/Paper.gd<>uid://d37kgko8n0umg::::res://paper/blankwhitepaper (1).png<>uid://3tplfrs3yu3x::::res://specific_cases/FormW2.tscn
+::res://progressbar/::1700937897
+emptyprogress.png::CompressedTexture2D::3432996781204021007::1700937897::1700945061::1::::<><>::
+progress.png::CompressedTexture2D::7698237787543069793::1700937806::1700945061::1::::<><>::
+::res://specific_cases/::1700944897
+FormW2.tscn::PackedScene::2005441487551141535::1700944699::0::1::::<><>::uid://bogu2qbnnilwk::::res://font.tres
+form_1099.tscn::PackedScene::6304455463261887671::1700944699::0::1::::<><>::uid://bogu2qbnnilwk::::res://font.tres

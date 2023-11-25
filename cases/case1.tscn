@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnhyuarfuvvqy"]
+
+[ext_resource type="Script" path="res://case.gd" id="1_240aw"]
+[ext_resource type="PackedScene" uid="uid://c5shsfimtj5cl" path="res://paper/paper.tscn" id="2_hybf7"]
+
+[node name="Case" type="Node2D"]
+script = ExtResource("1_240aw")
+
+[node name="Paper" parent="." instance=ExtResource("2_hybf7")]
+position = Vector2(34, 144)
+
+[node name="Paper2" parent="." instance=ExtResource("2_hybf7")]
+position = Vector2(80, 130)
+
+[node name="Paper4" parent="." instance=ExtResource("2_hybf7")]
+position = Vector2(295, 116)

@@ -1,0 +1,87 @@
+[gd_scene load_steps=9 format=3 uid="uid://xysorl0yuw36"]
+
+[ext_resource type="Script" path="res://game.gd" id="1_qab73"]
+[ext_resource type="PackedScene" uid="uid://bc2x2vq2y53sx" path="res://paper_getter.tscn" id="1_vrwev"]
+[ext_resource type="Texture2D" uid="uid://o4dlek05oo0q" path="res://background/bg_empty_bar.png" id="2_dpogv"]
+[ext_resource type="Texture2D" uid="uid://bo577qp2ib5dj" path="res://progressbar/emptyprogress.png" id="2_wca6n"]
+[ext_resource type="Texture2D" uid="uid://dhxc37qvp1h0t" path="res://progressbar/progress.png" id="3_7ht6d"]
+[ext_resource type="Theme" uid="uid://bogu2qbnnilwk" path="res://font.tres" id="3_syc0i"]
+[ext_resource type="PackedScene" uid="uid://rdemom264ym" path="res://shrink_zone.tscn" id="5_ogmhs"]
+[ext_resource type="Texture2D" uid="uid://scagkruh76y0" path="res://background/offlaptop.png" id="8_25nl5"]
+
+[node name="Game" type="Node2D"]
+scale = Vector2(1.02174, 1.2)
+script = ExtResource("1_qab73")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(188.052, 89.875)
+scale = Vector2(0.978009, 0.834491)
+texture = ExtResource("2_dpogv")
+
+[node name="ShiftBar" type="TextureProgressBar" parent="."]
+visible = false
+offset_right = 384.0
+offset_bottom = 30.0
+max_value = 600.0
+fill_mode = 1
+texture_under = ExtResource("2_wca6n")
+texture_progress = ExtResource("3_7ht6d")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 600.0
+
+[node name="Decisions" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Yes" type="Button" parent="Decisions"]
+layout_mode = 0
+offset_left = 228.043
+offset_top = 152.5
+offset_right = 271.043
+offset_bottom = 168.5
+theme = ExtResource("3_syc0i")
+text = "Approve"
+metadata/_edit_use_anchors_ = true
+
+[node name="No" type="Button" parent="Decisions"]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 152.5
+offset_right = 319.0
+offset_bottom = 168.5
+theme = ExtResource("3_syc0i")
+text = "Fraud"
+metadata/_edit_use_anchors_ = true
+
+[node name="Audit" type="Button" parent="Decisions"]
+layout_mode = 0
+offset_left = 322.979
+offset_top = 152.5
+offset_right = 365.979
+offset_bottom = 168.5
+theme = ExtResource("3_syc0i")
+text = "Audit"
+metadata/_edit_use_anchors_ = true
+
+[node name="PaperGetter" parent="." instance=ExtResource("1_vrwev")]
+position = Vector2(1076, 1323)
+scale = Vector2(0.888371, 1.00716)
+
+[node name="ShrinkZone2" parent="." instance=ExtResource("5_ogmhs")]
+position = Vector2(299.489, 137.5)
+
+[node name="ShrinkZone" parent="." instance=ExtResource("5_ogmhs")]
+position = Vector2(75.3617, 140)
+
+[node name="Offlaptop" type="Sprite2D" parent="."]
+position = Vector2(190.851, 74.1667)
+scale = Vector2(0.798878, 0.798878)
+texture = ExtResource("8_25nl5")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="Decisions/Yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="Decisions/No" to="." method="_on_no_pressed"]
+[connection signal="pressed" from="Decisions/Audit" to="." method="_on_audit_pressed"]

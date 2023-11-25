@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5shsfimtj5cl"]
+
+[ext_resource type="Script" path="res://paper/Paper.gd" id="1_3gonm"]
+[ext_resource type="Texture2D" uid="uid://d37kgko8n0umg" path="res://paper/blankwhitepaper (1).png" id="2_jq786"]
+[ext_resource type="PackedScene" uid="uid://3tplfrs3yu3x" path="res://specific_cases/FormW2.tscn" id="3_5fi3p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2o48e"]
+size = Vector2(176.667, 253.333)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bte0a"]
+size = Vector2(180, 253.333)
+
+[node name="Paper" type="CharacterBody2D"]
+position = Vector2(1, 0)
+scale = Vector2(0.3, 0.3)
+collision_layer = 2
+input_pickable = true
+script = ExtResource("1_3gonm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(10.5, 4.76837e-07)
+texture = ExtResource("2_jq786")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(11.6667, 3.17891e-06)
+shape = SubResource("RectangleShape2D_2o48e")
+
+[node name="ShrinkDetector" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShrinkDetector"]
+position = Vector2(10, 0)
+shape = SubResource("RectangleShape2D_bte0a")
+
+[node name="FormW2" parent="." instance=ExtResource("3_5fi3p")]
+offset_left = -73.3333
+offset_top = -123.333
+offset_right = 19.6667
+offset_bottom = -17.3333
+
+[connection signal="mouse_entered" from="." to="." method="mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="mouse_exited"]
+[connection signal="area_entered" from="ShrinkDetector" to="." method="_on_shrink_detector_area_entered"]
+[connection signal="area_exited" from="ShrinkDetector" to="." method="_on_shrink_detector_area_exited"]

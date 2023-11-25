@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bc2x2vq2y53sx"]
+
+[ext_resource type="Script" path="res://paper_getter.gd" id="1_cvntd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fdi52"]
+radius = 2.0
+
+[node name="PaperGetter" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_cvntd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_fdi52")
