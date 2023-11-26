@@ -1,24 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://euj76j2cu2rr"]
+[gd_scene load_steps=4 format=3 uid="uid://c6we3iwp6hxgt"]
 
 [ext_resource type="Script" path="res://scene_manager.gd" id="1_kutdb"]
-[ext_resource type="PackedScene" uid="uid://1qaifsf0a62h" path="res://transition_screen.tscn" id="2_qet5p"]
-[ext_resource type="PackedScene" uid="uid://xysorl0yuw36" path="res://game.tscn" id="2_ry2gv"]
+[ext_resource type="PackedScene" uid="uid://bpvh3prqh6yam" path="res://transition_screen.tscn" id="2_qet5p"]
+[ext_resource type="PackedScene" uid="uid://byctvcuvdn16l" path="res://menu.tscn" id="2_tcyjh"]
 
 [node name="SceneManager" type="Node2D"]
 script = ExtResource("1_kutdb")
 
 [node name="CurrentScene" type="Node2D" parent="."]
 
-[node name="Game" parent="CurrentScene" instance=ExtResource("2_ry2gv")]
+[node name="Menu" parent="CurrentScene" instance=ExtResource("2_tcyjh")]
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-mouse_filter = 1
+[node name="TransitionScreen" parent="." instance=ExtResource("2_qet5p")]
 
-[node name="TransitionScreen" parent="Control" instance=ExtResource("2_qet5p")]
-
-[connection signal="game_end" from="CurrentScene/Game" to="." method="_on_game_game_end"]
-[connection signal="transitioned" from="Control/TransitionScreen" to="." method="_on_transition_screen_transitioned"]
+[connection signal="startgame" from="CurrentScene/Menu" to="." method="_on_menu_startgame"]
+[connection signal="transitioned" from="TransitionScreen" to="." method="_on_transition_screen_transitioned"]

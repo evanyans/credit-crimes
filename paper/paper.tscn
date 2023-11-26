@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://c5shsfimtj5cl"]
+[gd_scene load_steps=8 format=3 uid="uid://c5shsfimtj5cl"]
 
 [ext_resource type="Script" path="res://paper/Paper.gd" id="1_3gonm"]
 [ext_resource type="Texture2D" uid="uid://b8gk04fxetjux" path="res://paper/paper.png" id="2_1em67"]
 [ext_resource type="Texture2D" uid="uid://m7bn44vf6vdj" path="res://paper/paperperspective.png" id="2_cg57d"]
+[ext_resource type="AudioStream" uid="uid://d38nu7gehrtod" path="res://audio/paper_swoosh2.wav" id="4_kmtw7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fkoeq"]
 animations = [{
@@ -19,10 +20,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2o48e"]
-size = Vector2(93, 114)
+size = Vector2(90.1598, 114)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bte0a"]
-size = Vector2(59, 46)
+size = Vector2(54, 46)
 
 [node name="Paper" type="CharacterBody2D"]
 position = Vector2(1, 0)
@@ -32,7 +33,6 @@ script = ExtResource("1_3gonm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fkoeq")
-frame_progress = 0.534994
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, 0)
@@ -45,6 +45,16 @@ collision_mask = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShrinkDetector"]
 position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_bte0a")
+
+[node name="Placeholder" type="Node2D" parent="."]
+position = Vector2(-39, -50)
+
+[node name="Logo" type="Node2D" parent="."]
+position = Vector2(30, -41)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_kmtw7")
+volume_db = -10.0
 
 [connection signal="mouse_entered" from="." to="." method="mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="mouse_exited"]

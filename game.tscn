@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://xysorl0yuw36"]
+[gd_scene load_steps=16 format=3 uid="uid://xysorl0yuw36"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_qab73"]
 [ext_resource type="PackedScene" uid="uid://bc2x2vq2y53sx" path="res://paper_getter.tscn" id="1_vrwev"]
@@ -6,13 +6,29 @@
 [ext_resource type="Texture2D" uid="uid://b2nfsv46ysahg" path="res://progressbar/progressempty.png" id="3_l0547"]
 [ext_resource type="Theme" uid="uid://bogu2qbnnilwk" path="res://font.tres" id="3_syc0i"]
 [ext_resource type="Texture2D" uid="uid://c2tt1b1abh7xp" path="res://progressbar/progressfull.png" id="4_i0rjo"]
+[ext_resource type="Theme" uid="uid://b4hovs6qsv60r" path="res://button.tres" id="5_6kk65"]
 [ext_resource type="PackedScene" uid="uid://rdemom264ym" path="res://shrink_zone.tscn" id="5_ogmhs"]
-[ext_resource type="Texture2D" uid="uid://cdlblbcp62cr2" path="res://background/newlaptop.png" id="7_r2k5a"]
+[ext_resource type="Texture2D" uid="uid://iyv48f15qxpo" path="res://GUIgreen.png" id="6_depc0"]
+[ext_resource type="Texture2D" uid="uid://cxn3gy4qx8ii7" path="res://GUIred.png" id="7_mgits"]
+[ext_resource type="PackedScene" uid="uid://cw86cb4caurmu" path="res://computer/computer.tscn" id="8_v3kop"]
+[ext_resource type="AudioStream" uid="uid://c60yesu4r7yu3" path="res://audio/clock_ticking.wav" id="9_in852"]
+[ext_resource type="AudioStream" uid="uid://c3pn5dlio8sy2" path="res://audio/wow.wav" id="13_4684v"]
 
-[sub_resource type="Gradient" id="Gradient_jogfv"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2ivun"]
+texture = ExtResource("6_depc0")
+texture_margin_left = 5.0
+texture_margin_top = 2.0
+texture_margin_right = 5.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(113, 81, 30, 14)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_k3clg"]
-gradient = SubResource("Gradient_jogfv")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g3kwb"]
+texture = ExtResource("7_mgits")
+texture_margin_left = 5.0
+texture_margin_top = 2.0
+texture_margin_right = 5.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(113, 81, 30, 14)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_qab73")
@@ -34,51 +50,45 @@ texture_under = ExtResource("3_l0547")
 texture_progress = ExtResource("4_i0rjo")
 texture_progress_offset = Vector2(13, 1)
 
-[node name="Timer" type="Timer" parent="."]
-process_callback = 0
-wait_time = 600.0
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_left = 204.0
+offset_top = 189.0
+offset_right = 383.0
+offset_bottom = 211.0
 
-[node name="Decisions" type="Control" parent="."]
-z_index = 10
-layout_mode = 3
-anchors_preset = 0
-offset_left = 12.0
-offset_top = 40.0
-offset_right = 52.0
-offset_bottom = 80.0
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
 
-[node name="Yes" type="Button" parent="Decisions"]
+[node name="Yes" type="Button" parent="MarginContainer/HBoxContainer"]
 z_index = 10
 layout_mode = 2
-offset_left = 228.043
-offset_top = 152.5
-offset_right = 271.043
-offset_bottom = 168.5
-theme = ExtResource("3_syc0i")
+theme = ExtResource("5_6kk65")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxTexture_2ivun")
 text = "Approve"
 metadata/_edit_use_anchors_ = true
 
-[node name="No" type="Button" parent="Decisions"]
+[node name="No" type="Button" parent="MarginContainer/HBoxContainer"]
 z_index = 10
 layout_mode = 2
-offset_left = 276.0
-offset_top = 152.5
-offset_right = 319.0
-offset_bottom = 168.5
-theme = ExtResource("3_syc0i")
+theme = ExtResource("5_6kk65")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxTexture_g3kwb")
 text = "Fraud"
 metadata/_edit_use_anchors_ = true
 
-[node name="Audit" type="Button" parent="Decisions"]
+[node name="Audit" type="Button" parent="MarginContainer/HBoxContainer"]
 z_index = 10
 layout_mode = 2
-offset_left = 322.979
-offset_top = 152.5
-offset_right = 365.979
-offset_bottom = 168.5
-theme = ExtResource("3_syc0i")
+theme = ExtResource("5_6kk65")
+theme_override_font_sizes/font_size = 10
 text = "Audit"
 metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 600.0
 
 [node name="PaperGetter" parent="." instance=ExtResource("1_vrwev")]
 position = Vector2(1076, 1323)
@@ -90,19 +100,29 @@ position = Vector2(309, 182)
 [node name="ShrinkZone" parent="." instance=ExtResource("5_ogmhs")]
 position = Vector2(70, 181)
 
-[node name="Offlaptop" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(194, 101)
-scale = Vector2(0.822127, 0.726286)
-texture = ExtResource("7_r2k5a")
+[node name="Computer" parent="." instance=ExtResource("8_v3kop")]
+position = Vector2(300, 165)
 
-[node name="PointLight2D" type="PointLight2D" parent="Offlaptop"]
-visible = false
-position = Vector2(-1.21635, -17.2108)
-scale = Vector2(1.90056, 1.35535)
-texture = SubResource("GradientTexture2D_k3clg")
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(240.043, 192.5)
+stream = ExtResource("9_in852")
+volume_db = 7.0
 
+[node name="QUOTA" type="Label" parent="."]
+offset_left = 294.0
+offset_top = 19.0
+offset_right = 378.0
+offset_bottom = 42.0
+theme = ExtResource("3_syc0i")
+theme_override_font_sizes/font_size = 12
+text = "Quota 0/4"
+horizontal_alignment = 2
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_4684v")
+volume_db = -5.0
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/No" to="." method="_on_no_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Audit" to="." method="_on_audit_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="pressed" from="Decisions/Yes" to="." method="_on_yes_pressed"]
-[connection signal="pressed" from="Decisions/No" to="." method="_on_no_pressed"]
-[connection signal="pressed" from="Decisions/Audit" to="." method="_on_audit_pressed"]

@@ -1,25 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://5fj6yy7jtx7o"]
+[gd_scene load_steps=8 format=3 uid="uid://5fj6yy7jtx7o"]
 
 [ext_resource type="Script" path="res://case.gd" id="1_xx6ur"]
 [ext_resource type="PackedScene" uid="uid://c5shsfimtj5cl" path="res://paper/paper.tscn" id="2_g0r16"]
-[ext_resource type="Texture2D" uid="uid://dhm8x6hxql2es" path="res://paper/taxpaper.png" id="3_rdqp5"]
+[ext_resource type="PackedScene" uid="uid://26knnwoftshn" path="res://specific_cases/insurance_statement.tscn" id="3_vgiji"]
+[ext_resource type="PackedScene" uid="uid://cdd8nhm5r180o" path="res://paper/purplestamp.tscn" id="4_bnhrw"]
+[ext_resource type="PackedScene" uid="uid://bw86re7hbbj3f" path="res://specific_cases/medical_receipt.tscn" id="4_mwwu5"]
+[ext_resource type="PackedScene" uid="uid://c3gmkduygx86b" path="res://specific_cases/tax_return_s_3.tscn" id="5_hh1yl"]
+[ext_resource type="PackedScene" uid="uid://bbc2gltbtftlm" path="res://paper/redstamp.tscn" id="7_repr5"]
 
 [node name="Case" type="Node2D"]
 script = ExtResource("1_xx6ur")
 
 [node name="Paper" parent="." instance=ExtResource("2_g0r16")]
-position = Vector2(34, 144)
+position = Vector2(32, 152)
+text = ExtResource("3_vgiji")
+logo = ExtResource("4_bnhrw")
 
 [node name="Paper2" parent="." instance=ExtResource("2_g0r16")]
-position = Vector2(77, 157)
-
-[node name="Paper3" parent="." instance=ExtResource("2_g0r16")]
-position = Vector2(121, 131)
+position = Vector2(109, 150)
+text = ExtResource("4_mwwu5")
+logo = ExtResource("4_bnhrw")
 
 [node name="Paper4" parent="." instance=ExtResource("2_g0r16")]
-position = Vector2(295, 116)
-
-[node name="Sprite2D" parent="Paper4" index="0"]
-texture = ExtResource("3_rdqp5")
-
-[editable path="Paper4"]
+position = Vector2(305, 149)
+text = ExtResource("5_hh1yl")
+logo = ExtResource("7_repr5")

@@ -1,6 +1,6 @@
 extends Node2D
 
-var correct_answer = 0
+var correct_answer = 1
 
 var documents
 

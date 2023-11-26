@@ -9,8 +9,17 @@ var mouse_in = false
 var ischosen = false
 
 var animator
+@export var text : PackedScene
+@export var logo : PackedScene
+var Text
+var Logo
 
 func _ready():
+	Text = text.instantiate()
+	if logo != null:
+		Logo = logo.instantiate()
+		get_node("Logo").add_child(Logo)
+	get_node("Placeholder").add_child(Text)
 	animator = get_node("AnimatedSprite2D")
 
 func give_template(formtype):
@@ -48,13 +57,21 @@ func mouse_exited():
 
 
 func _on_shrink_detector_area_entered(area):
+	$AudioStreamPlayer2D.play()
 	#later, instead of changing the scale, just change the animation/sprite
+	Text.visible = false
+	if Logo != null:
+		Logo.visible = false
 	if area.name == "ShrinkZone2":
 		scale.x= -1
 	animator.frame= 0
 
 
 func _on_shrink_detector_area_exited(area):
+	$AudioStreamPlayer2D.play()
+	Text.visible = true
+	if Logo != null:
+		Logo.visible = true
 	if area.name == "ShrinkZone2":
 		scale.x= -1
 	animator.frame= 1

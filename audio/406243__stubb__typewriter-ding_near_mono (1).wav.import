@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cuxe0vww2hnca"
+path="res://.godot/imported/406243__stubb__typewriter-ding_near_mono (1).wav-6a9c5321a1fe331e92c2765c9e676d7a.sample"
+
+[deps]
+
+source_file="res://audio/406243__stubb__typewriter-ding_near_mono (1).wav"
+dest_files=["res://.godot/imported/406243__stubb__typewriter-ding_near_mono (1).wav-6a9c5321a1fe331e92c2765c9e676d7a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

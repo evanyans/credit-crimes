@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cwxvq6b742dm7"
+path="res://.godot/imported/mixkit-hard-typewriter-click-1119 (1).wav-a9130ceff53f89552a3d7167d58cb026.sample"
+
+[deps]
+
+source_file="res://audio/mixkit-hard-typewriter-click-1119 (1).wav"
+dest_files=["res://.godot/imported/mixkit-hard-typewriter-click-1119 (1).wav-a9130ceff53f89552a3d7167d58cb026.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

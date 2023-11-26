@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdd8nhm5r180o"]
+
+[ext_resource type="Texture2D" uid="uid://cx23132dartmk" path="res://paper/stamp4.png" id="1_oxr0k"]
+
+[node name="Sprite2D" type="Sprite2D"]
+texture = ExtResource("1_oxr0k")
