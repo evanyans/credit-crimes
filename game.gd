@@ -6,7 +6,7 @@ var case1 = preload("res://cases/case1.tscn")
 var case2 = preload("res://cases/case2.tscn")
 var case3 = preload("res://cases/case3.tscn")
 var case4 = preload("res://cases/case4.tscn")
-var paper_scene = preload("res://paper/Paper.tscn")
+var paper_scene = preload("res://paper/paper.tscn")
 var end_scene = load("res://endscreen/endscreen.tscn")
 
 var paper_stack = []
@@ -44,9 +44,7 @@ func next_case(choice):
 		if choice == case.correct_answer:
 			quota.text = "CASE " + str(current_state+1) + "/4"
 			Globalprices.game_deductions[current_state-1] = 16.55
-			print("CORRECT!")
 		else:
-			print("WRONG!")
 			quota.text = "CASE " + str(current_state+1) + "/4"
 			Globalprices.game_deductions[current_state-1] = -20.45
 		remove_case()
@@ -56,9 +54,7 @@ func next_case(choice):
 		if choice == case.correct_answer:
 			quota.text = "CASE " + str(current_state+1) + "/4"
 			Globalprices.game_deductions[current_state-1] = 16.55
-			print("CORRECT!")
 		else:
-			print("WRONG!")
 			quota.text = "CASE " + str(current_state+1) + "/4"
 			Globalprices.game_deductions[current_state-1] = -20.45
 		game_ended()

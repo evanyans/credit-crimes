@@ -1,12 +1,15 @@
-[gd_scene load_steps=19 format=3 uid="uid://cw86cb4caurmu"]
+[gd_scene load_steps=17 format=3 uid="uid://cw86cb4caurmu"]
 
 [ext_resource type="Script" path="res://computer.gd" id="1_bncr7"]
 [ext_resource type="Texture2D" uid="uid://bwq03n3glxm5n" path="res://computer/computer-default.png" id="2_ns8st"]
 [ext_resource type="Texture2D" uid="uid://pegdl2qch1td" path="res://computer/harmony-insta.png" id="3_2gc2u"]
 [ext_resource type="Texture2D" uid="uid://dbt141pc3g6hl" path="res://computer/medical-linkedin.png" id="4_ncu2d"]
-[ext_resource type="Texture2D" uid="uid://cjnqmri8uiric" path="res://computer/harmony-closeup-3.png" id="4_odfhe"]
 [ext_resource type="Texture2D" uid="uid://dsq2837yl4sau" path="res://computer/medical-insta.png" id="5_7rh3u"]
+[ext_resource type="Theme" uid="uid://bogu2qbnnilwk" path="res://font.tres" id="7_2yxqm"]
 [ext_resource type="Texture2D" uid="uid://bjkuw7p2xq3g0" path="res://computer/medical-closeup-1.png" id="7_53rcl"]
+[ext_resource type="Texture2D" uid="uid://db0hd6n7sxmvk" path="res://computer/medical-closeup-2.png" id="7_mueja"]
+[ext_resource type="Texture2D" uid="uid://6qjidbvbmiis" path="res://computer/exclamation.png" id="9_nopen"]
+[ext_resource type="AudioStream" uid="uid://b4iuqko6vg3kv" path="res://audio/news-ting-6832.mp3" id="10_tvd1c"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0wr4a"]
 animations = [{
@@ -28,18 +31,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ulcce"]
-size = Vector2(24, 22)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sswd5"]
-size = Vector2(117, 70)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wpbdd"]
-size = Vector2(23, 22)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_37wld"]
-size = Vector2(116, 73)
-
 [sub_resource type="Gradient" id="Gradient_isvyf"]
 offsets = PackedFloat32Array(0, 0.696774)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -51,16 +42,14 @@ height = 160
 fill = 1
 fill_from = Vector2(0.5, 0.505)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_25lha"]
-size = Vector2(268, 150)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_325va"]
+size = Vector2(24, 23)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cy46h"]
-size = Vector2(24, 24)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_in2m0"]
+size = Vector2(20, 19)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1btrd"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xn521"]
-size = Vector2(267, 148)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vsx5v"]
+size = Vector2(267, 149)
 
 [node name="Computer" type="Node2D"]
 script = ExtResource("1_bncr7")
@@ -68,81 +57,89 @@ script = ExtResource("1_bncr7")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-99, -72)
 sprite_frames = SubResource("SpriteFrames_0wr4a")
-
-[node name="LinkedIn" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LinkedIn"]
-position = Vector2(-144, -83)
-shape = SubResource("RectangleShape2D_ulcce")
-
-[node name="Screen" type="Area2D" parent="LinkedIn"]
-monitoring = false
-monitorable = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LinkedIn/Screen"]
-position = Vector2(-111.5, -96)
-shape = SubResource("RectangleShape2D_sswd5")
-
-[node name="Instagram" type="Area2D" parent="."]
-position = Vector2(-144, -112)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Instagram"]
-shape = SubResource("RectangleShape2D_wpbdd")
-
-[node name="Screen" type="Area2D" parent="Instagram"]
-monitoring = false
-monitorable = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Instagram/Screen"]
-position = Vector2(33, 17)
-shape = SubResource("RectangleShape2D_37wld")
+frame = 3
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(-113, -97)
-energy = 0.8
+energy = 0.7
 texture = SubResource("GradientTexture2D_712aw")
 
-[node name="HarmonyClose" type="Sprite2D" parent="."]
+[node name="Stage3" type="Node2D" parent="."]
+
+[node name="Instagram" type="Area2D" parent="Stage3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stage3/Instagram"]
+position = Vector2(-144, -111.5)
+shape = SubResource("RectangleShape2D_325va")
+
+[node name="IGPost1" type="Area2D" parent="Stage3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stage3/IGPost1"]
+position = Vector2(-140, -86.5)
+shape = SubResource("RectangleShape2D_in2m0")
+
+[node name="Post1" type="Sprite2D" parent="Stage3"]
 visible = false
-light_mask = 0
-z_index = 10
-position = Vector2(-102, -91)
-texture = ExtResource("4_odfhe")
-
-[node name="Closeup" type="Area2D" parent="HarmonyClose"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HarmonyClose/Closeup"]
-shape = SubResource("RectangleShape2D_25lha")
-
-[node name="InstagramV2" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InstagramV2"]
-position = Vector2(-144, -112)
-shape = SubResource("RectangleShape2D_cy46h")
-
-[node name="Screen" type="Area2D" parent="InstagramV2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InstagramV2/Screen"]
-position = Vector2(-140, -86)
-shape = SubResource("RectangleShape2D_1btrd")
-
-[node name="MedicalCloseup" type="Sprite2D" parent="."]
-visible = false
-light_mask = 0
-position = Vector2(-110, -91)
+position = Vector2(-111, -81)
 texture = ExtResource("7_53rcl")
 
-[node name="Closeup" type="Area2D" parent="MedicalCloseup"]
+[node name="ReturnToIGPost" type="Area2D" parent="Stage3/Post1"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MedicalCloseup/Closeup"]
-position = Vector2(0.5, -1)
-shape = SubResource("RectangleShape2D_xn521")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stage3/Post1/ReturnToIGPost"]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_vsx5v")
 
-[connection signal="input_event" from="LinkedIn" to="." method="_on_linked_in_input_event3"]
-[connection signal="input_event" from="LinkedIn/Screen" to="." method="_on_screen_input_event2"]
-[connection signal="input_event" from="Instagram" to="." method="_on_area_2d_input_event"]
-[connection signal="input_event" from="Instagram/Screen" to="." method="_on_screen_input_event"]
-[connection signal="input_event" from="HarmonyClose/Closeup" to="." method="_on_closeup_input_event2"]
-[connection signal="input_event" from="InstagramV2" to="." method="_on_instagram_v_2_input_event"]
-[connection signal="input_event" from="InstagramV2/Screen" to="." method="_on_screen_input_event4"]
-[connection signal="input_event" from="MedicalCloseup/Closeup" to="." method="_on_closeup_input_event5"]
+[node name="Label" type="Label" parent="Stage3/Post1"]
+offset_left = 20.0
+offset_top = -38.0
+offset_right = 125.0
+offset_bottom = -15.0
+theme = ExtResource("7_2yxqm")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Out eating McDonald's with the boys,
+cant wait to be at tonight's football
+game. #blessed #yummy #mcd's"
+
+[node name="IGPost2" type="Area2D" parent="Stage3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stage3/IGPost2"]
+position = Vector2(-113, -86.5)
+shape = SubResource("RectangleShape2D_in2m0")
+
+[node name="Post2" type="Sprite2D" parent="Stage3"]
+visible = false
+position = Vector2(-110, -80)
+texture = ExtResource("7_mueja")
+
+[node name="ReturnToIGPost" type="Area2D" parent="Stage3/Post2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stage3/Post2/ReturnToIGPost"]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_vsx5v")
+
+[node name="Label" type="Label" parent="Stage3/Post2"]
+offset_left = 20.0
+offset_top = -39.0
+offset_right = 125.0
+offset_bottom = -9.0
+theme = ExtResource("7_2yxqm")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Just treated my lovely girl out for
+dinner at a five star restaurant.
+Wow it is so chilly outside. #cold
+#loved #money #eatinggood"
+
+[node name="mark" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-109, -160)
+texture = ExtResource("9_nopen")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_tvd1c")
+volume_db = -5.0
+
+[connection signal="input_event" from="Stage3/Instagram" to="." method="stage3instagram"]
+[connection signal="input_event" from="Stage3/IGPost1" to="." method="openigpost1"]
+[connection signal="input_event" from="Stage3/Post1/ReturnToIGPost" to="." method="returntoigpost1"]
+[connection signal="input_event" from="Stage3/IGPost2" to="." method="openigpost2"]
+[connection signal="input_event" from="Stage3/Post2/ReturnToIGPost" to="." method="returntoigpost2"]

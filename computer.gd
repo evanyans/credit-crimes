@@ -1,85 +1,64 @@
 extends Node2D
 
 var sprite
+var runOnce = true
 
 func _ready():
 	sprite = $AnimatedSprite2D
-	pass
-	
+	sprite.frame = 0
+	$Stage3/IGPost1/CollisionShape2D.disabled = true
+	$Stage3/IGPost2/CollisionShape2D.disabled = true
+	$Stage3/Post1/ReturnToIGPost/CollisionShape2D.disabled = true
+	$Stage3/Post2/ReturnToIGPost/CollisionShape2D.disabled = true
+	$Stage3/Post1.visible = false
 
-
-func _on_area_2d_input_event(viewport, event, shape_idx):
-	if (Globalprices.currentstage == 3 && event is InputEventMouseButton && event.pressed):
-		sprite.frame = 1
-		$Instagram.monitoring = false
-		$Instagram.monitorable = false
-		$Instagram/Screen.monitoring = true
-		$Instagram/Screen.monitorable = true
-		print('Clicked Instagram')
-
-
-func _on_screen_input_event(viewport, event, shape_idx):
-	if (Globalprices.currentstage == 3 && event is InputEventMouseButton && event.pressed):
-		print("opening post")
-		$HarmonyClose.visible = true
-		$Instagram/Screen.monitoring = false
-		$Instagram/Screen.monitorable = false
-	
-
-
-func _on_closeup_input_event2(viewport, event, shape_idx):
-	if (Globalprices.currentstage == 3 && event is InputEventMouseButton && event.pressed):
-		print("closing post")
-		$HarmonyClose.visible = false
-		$Instagram/Screen.monitoring = true
-		$Instagram/Screen.monitorable = true
-
-
-func _on_linked_in_input_event3(viewport, event, shape_idx):
-	if (Globalprices.currentstage == 2 && event is InputEventMouseButton && event.pressed):
-		sprite.frame = 2
-		$LinkedIn.monitoring = false
-		$LinkedIn.monitorable = false
-		$LinkedIn/Screen.monitoring = true
-		$LinkedIn/Screen.monitorable = true
+func _physics_process(delta):
+	print(Globalprices.currentstage)
+	if runOnce && Globalprices.currentstage == 2:
+		runOnce = false
+		$AudioStreamPlayer2D.play()
+		$mark.visible = true
+	elif Globalprices.currentstage != 2:
+		$mark.visible = false
+		$Stage3/Post1.visible = false
+		$Stage3/Post2.visible = false		
 		
-		$PointLight2D.energy = 0.4
-		print('Clicked LinkedIn')
 
-
-func _on_screen_input_event2(viewport, event, shape_idx):
-	if (Globalprices.currentstage == 2 && event is InputEventMouseButton && event.pressed):
-		sprite.frame = 0
-		$LinkedIn.monitoring = true
-		$LinkedIn.monitorable = true
-		$LinkedIn/Screen.monitoring = false
-		$LinkedIn/Screen.monitorable = false
-		print('returned back to home')
-		
-		$PointLight2D.energy = 0.8
-##################################################
-
-func _on_instagram_v_2_input_event(viewport, event, shape_idx):
+func stage3instagram(viewport, event, shape_idx):
 	if (Globalprices.currentstage == 2 && event is InputEventMouseButton && event.pressed):
 		sprite.frame = 3
-		$InstagramV2.monitoring = false
-		$InstagramV2.monitorable = false
-		$Instagram/Screen.monitoring = true
-		$Instagram/Screen.monitorable = true
-		print('Clicked Instagram')
+		$mark.visible = false
+		$Stage3/Instagram/CollisionShape2D.disabled = true
+		
+		$Stage3/IGPost1/CollisionShape2D.disabled = false
+		$Stage3/IGPost2/CollisionShape2D.disabled = false
+		
 
 
-func _on_screen_input_event4(viewport, event, shape_idx):
+func openigpost1(viewport, event, shape_idx):
 	if (Globalprices.currentstage == 2 && event is InputEventMouseButton && event.pressed):
-		print("opening post2")
-		$MedicalCloseup.visible = true
-		$InstagramV2/Screen.monitoring = false
-		$InstagramV2/Screen.monitorable = false
+		$Stage3/Post1.visible = true
+		$Stage3/IGPost1/CollisionShape2D.disabled = true
+		$Stage3/Post1/ReturnToIGPost/CollisionShape2D.disabled = false
 
 
-func _on_closeup_input_event5(viewport, event, shape_idx):
+func returntoigpost1(viewport, event, shape_idx):
 	if (Globalprices.currentstage == 2 && event is InputEventMouseButton && event.pressed):
-		print("closing post")
-		$MedicalCloseup.visible = false
-		$InstagramV2/Screen.monitoring = true
-		$InstagramV2/Screen.monitorable = true
+		$Stage3/Post1.visible = false
+		$Stage3/Post1/ReturnToIGPost/CollisionShape2D.disabled = true
+		$Stage3/IGPost1/CollisionShape2D.disabled = false
+
+
+
+func openigpost2(viewport, event, shape_idx):
+	if (Globalprices.currentstage == 2 && event is InputEventMouseButton && event.pressed):
+		$Stage3/Post2.visible = true
+		$Stage3/IGPost2/CollisionShape2D.disabled = true
+		$Stage3/Post2/ReturnToIGPost/CollisionShape2D.disabled = false
+
+
+func returntoigpost2(viewport, event, shape_idx):
+	if (Globalprices.currentstage == 2 && event is InputEventMouseButton && event.pressed):
+		$Stage3/Post2.visible = false
+		$Stage3/Post2/ReturnToIGPost/CollisionShape2D.disabled = true
+		$Stage3/IGPost2/CollisionShape2D.disabled = false

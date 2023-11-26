@@ -11,7 +11,6 @@ func _ready():
 	for n in range(0,4):
 		sum += Globalprices.game_deductions[n]
 		
-	print(sum)
 	$Money1.text = str(Globalprices.game_deductions[0]) + "$"
 	$Money2.text = str(Globalprices.game_deductions[1]) + "$"
 	$Money3.text = str(Globalprices.game_deductions[2]) + "$"
