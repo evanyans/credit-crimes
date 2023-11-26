@@ -1,5 +1,7 @@
 extends Node2D
 
+signal game_end
+
 var case1 = preload("res://cases/case1.tscn")
 var case2 = preload("res://cases/case2.tscn")
 var case3 = preload("res://cases/case3.tscn")
@@ -44,7 +46,7 @@ func next_case(choice):
 		case = cases[current_state]
 		add_child(case)
 	else:
-		game_ended()
+		emit_signal("game_end")
 		
 	
 func remove_case():
@@ -81,4 +83,4 @@ func _on_audit_pressed():
 
 
 func _on_timer_timeout():
-	game_ended()
+	emit_signal("game_end")

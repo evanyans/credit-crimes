@@ -39,6 +39,7 @@ process_callback = 0
 wait_time = 600.0
 
 [node name="Decisions" type="Control" parent="."]
+z_index = 10
 layout_mode = 3
 anchors_preset = 0
 offset_left = 12.0
@@ -47,7 +48,8 @@ offset_right = 52.0
 offset_bottom = 80.0
 
 [node name="Yes" type="Button" parent="Decisions"]
-layout_mode = 0
+z_index = 10
+layout_mode = 2
 offset_left = 228.043
 offset_top = 152.5
 offset_right = 271.043
@@ -57,7 +59,8 @@ text = "Approve"
 metadata/_edit_use_anchors_ = true
 
 [node name="No" type="Button" parent="Decisions"]
-layout_mode = 0
+z_index = 10
+layout_mode = 2
 offset_left = 276.0
 offset_top = 152.5
 offset_right = 319.0
@@ -67,7 +70,8 @@ text = "Fraud"
 metadata/_edit_use_anchors_ = true
 
 [node name="Audit" type="Button" parent="Decisions"]
-layout_mode = 0
+z_index = 10
+layout_mode = 2
 offset_left = 322.979
 offset_top = 152.5
 offset_right = 365.979

@@ -11,6 +11,14 @@ script = ExtResource("1_kutdb")
 
 [node name="Game" parent="CurrentScene" instance=ExtResource("2_ry2gv")]
 
-[node name="TransitionScreen" parent="." instance=ExtResource("2_qet5p")]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
 
-[connection signal="transitioned" from="TransitionScreen" to="." method="_on_transition_screen_transitioned"]
+[node name="TransitionScreen" parent="Control" instance=ExtResource("2_qet5p")]
+
+[connection signal="game_end" from="CurrentScene/Game" to="." method="_on_game_game_end"]
+[connection signal="transitioned" from="Control/TransitionScreen" to="." method="_on_transition_screen_transitioned"]
