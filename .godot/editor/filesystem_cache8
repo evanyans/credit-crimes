@@ -1,13 +1,13 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1701000755
+::res://::1701001215
 43559__tams_kp__typewriter19.wav::AudioStreamWAV::6063639085738330382::1700982545::1700982542::1::::<><>::
 button.tres::Theme::4437236327106314343::1700994392::0::1::::<><>::uid://b800ksxonanyb::::res://fonts/tinypixel.otf<>uid://50re0vn4gpxb::::res://GUI.png
 case.gd::GDScript::-1::1700992745::0::1::::<>Node2D<>::
-computer.gd::GDScript::-1::1700998347::0::1::::<>Node2D<>::
+computer.gd::GDScript::-1::1701000934::0::1::::<>Node2D<>::
 export_presets.cfg::TextFile::-1::1700993644::0::1::::<><>::
 font.tres::Theme::3382714159967442066::1700970475::0::1::::<><>::uid://b800ksxonanyb
 game.gd::GDScript::-1::1700999928::0::1::::<>Node2D<>::
-game.tscn::PackedScene::1665007287815215535::1701000755::0::1::::<><>::res://game.gd<>uid://bc2x2vq2y53sx::::res://paper_getter.tscn<>uid://8v4x2oi5lcu3::::res://background/bg_empty_bar (1).png<>uid://b2nfsv46ysahg::::res://progressbar/progressempty.png<>uid://bogu2qbnnilwk::::res://font.tres<>uid://c2tt1b1abh7xp::::res://progressbar/progressfull.png<>uid://b4hovs6qsv60r::::res://button.tres<>uid://rdemom264ym::::res://shrink_zone.tscn<>uid://iyv48f15qxpo::::res://GUIgreen.png<>uid://cxn3gy4qx8ii7::::res://GUIred.png<>uid://cw86cb4caurmu::::res://computer/computer.tscn
+game.tscn::PackedScene::1665007287815215535::1701000968::0::1::::<><>::res://game.gd<>uid://bc2x2vq2y53sx::::res://paper_getter.tscn<>uid://8v4x2oi5lcu3::::res://background/bg_empty_bar (1).png<>uid://b2nfsv46ysahg::::res://progressbar/progressempty.png<>uid://bogu2qbnnilwk::::res://font.tres<>uid://c2tt1b1abh7xp::::res://progressbar/progressfull.png<>uid://b4hovs6qsv60r::::res://button.tres<>uid://rdemom264ym::::res://shrink_zone.tscn<>uid://iyv48f15qxpo::::res://GUIgreen.png<>uid://cxn3gy4qx8ii7::::res://GUIred.png<>uid://cw86cb4caurmu::::res://computer/computer.tscn
 globalprices.gd::GDScript::-1::1701000489::0::1::::<>Node<>::
 GUI.png::CompressedTexture2D::2158315431199429931::1700986534::1700986535::1::::<><>::
 GUIgreen.png::CompressedTexture2D::612384402289675336::1700987541::1700987541::1::::<><>::
@@ -48,9 +48,9 @@ case1.tscn::PackedScene::3314819245486862676::1700993362::0::1::::<><>::res://ca
 case2.tscn::PackedScene::6016277583056546911::1700993362::0::1::::<><>::res://case.gd<>uid://c5shsfimtj5cl
 case3.tscn::PackedScene::2116590309559664850::1700993587::0::1::::<><>::res://case.gd<>uid://c5shsfimtj5cl
 case4.tscn::PackedScene::336417754974859510::1700993362::0::1::::<><>::res://case.gd<>uid://c5shsfimtj5cl
-::res://computer/::1701000754
+::res://computer/::1701000967
 computer-default.png::CompressedTexture2D::3965173941189575265::1700975536::1700975489::1::::<><>::
-computer.tscn::PackedScene::6387006289084812560::1701000754::0::1::::<><>::res://computer.gd<>uid://bwq03n3glxm5n::::res://computer/computer-default.png<>uid://pegdl2qch1td::::res://computer/harmony-insta.png<>uid://dbt141pc3g6hl::::res://computer/medical-linkedin.png<>uid://dsq2837yl4sau::::res://computer/medical-insta.png<>uid://bogu2qbnnilwk::::res://font.tres<>uid://bjkuw7p2xq3g0::::res://computer/medical-closeup-1.png<>uid://db0hd6n7sxmvk::::res://computer/medical-closeup-2.png<>uid://6qjidbvbmiis::::res://computer/exclamation.png
+computer.tscn::PackedScene::6387006289084812560::1701000967::0::1::::<><>::res://computer.gd<>uid://bwq03n3glxm5n::::res://computer/computer-default.png<>uid://pegdl2qch1td::::res://computer/harmony-insta.png<>uid://dbt141pc3g6hl::::res://computer/medical-linkedin.png<>uid://dsq2837yl4sau::::res://computer/medical-insta.png<>uid://bogu2qbnnilwk::::res://font.tres<>uid://bjkuw7p2xq3g0::::res://computer/medical-closeup-1.png<>uid://db0hd6n7sxmvk::::res://computer/medical-closeup-2.png<>uid://6qjidbvbmiis::::res://computer/exclamation.png<>uid://dawac5e7e4s1l::::res://audio/clickyclick.wav
 exclamation.png::CompressedTexture2D::2209445096200913938::1700996528::1700996528::1::::<><>::
 harmony-closeup-3.png::CompressedTexture2D::5432371679124210678::1700976498::1700976499::1::::<><>::
 harmony-insta.png::CompressedTexture2D::1061460445121554441::1700976498::1700976499::1::::<><>::
@@ -58,11 +58,11 @@ medical-closeup-1.png::CompressedTexture2D::3040019386474651749::1700978658::170
 medical-closeup-2.png::CompressedTexture2D::7281492364685127964::1700978658::1700978658::1::::<><>::
 medical-insta.png::CompressedTexture2D::8457391091826254452::1700978658::1700978658::1::::<><>::
 medical-linkedin.png::CompressedTexture2D::7270305890787371493::1700978658::1700978658::1::::<><>::
-::res://endscreen/::1701000756
+::res://endscreen/::1701000969
 endscreen.gd::GDScript::-1::1701000548::0::1::::<>Node2D<>::
 endscreen.png::CompressedTexture2D::1215027059901745413::1700966880::1700966880::1::::<><>::
-endscreen.tscn::PackedScene::8925698674966048644::1701000756::0::1::::<><>::res://endscreen/endscreen.gd<>uid://rktk216g288h::::res://endscreen/endscreen.png<>uid://bogu2qbnnilwk::::res://font.tres<>uid://dyk73nod4bivv::::res://fonts/monogram.ttf
-::res://Exports/::1700993638
+endscreen.tscn::PackedScene::8925698674966048644::1701000969::0::1::::<><>::res://endscreen/endscreen.gd<>uid://rktk216g288h::::res://endscreen/endscreen.png<>uid://bogu2qbnnilwk::::res://font.tres<>uid://dyk73nod4bivv::::res://fonts/monogram.ttf
+::res://Exports/::1701001207
 index.apple-touch-icon.png::CompressedTexture2D::1185125956003384867::1700991801::1700992274::1::::<><>::
 index.icon.png::CompressedTexture2D::2950486714918717175::1700991801::1700992274::1::::<><>::
 index.png::CompressedTexture2D::7553175552861688371::1700991801::1700992274::1::::<><>::
@@ -82,18 +82,22 @@ index.png::CompressedTexture2D::7747796489297747821::1700993385::1700993565::1::
 index.apple-touch-icon.png::CompressedTexture2D::2601577883472540348::1700993643::1700993940::1::::<><>::
 index.icon.png::CompressedTexture2D::3046649358472948713::1700993643::1700993940::1::::<><>::
 index.png::CompressedTexture2D::5839883187497706878::1700993643::1700993940::1::::<><>::
+::res://Exports/V6/::1701001244
+index.apple-touch-icon.png::CompressedTexture2D::5388204374248897442::1701001214::1701001255::1::::<><>::
+index.icon.png::CompressedTexture2D::2842157905421020493::1701001214::1701001255::1::::<><>::
+index.png::CompressedTexture2D::5646669367399667936::1701001214::1701001255::1::::<><>::
 ::res://fonts/::1700950848
 monogram.ttf::FontFile::8866431726536465079::1700921806::1700945061::1::::<><>::
 Silver.ttf::FontFile::2957381549091845980::1700920574::1700945061::1::::<><>::
 tinypixel.otf::FontFile::4755798731962162997::1700922273::1700945061::1::::<><>::
-::res://paper/::1701000755
+::res://paper/::1701000968
 blankwhitepaper (1).png::CompressedTexture2D::9191228194143727526::1700944286::1700945061::1::::<><>::
 bluestamp.tscn::PackedScene::3982772452587818893::1700993362::0::1::::<><>::uid://bijv67cno0ypn
 greenstamp.tscn::PackedScene::5965612053050590727::1700993362::0::1::::<><>::uid://ct86apt5yo8m1
 orangestamp.tscn::PackedScene::344816824296531312::1700993362::0::1::::<><>::uid://bpcplllld0n1x
 Paper.gd::GDScript::-1::1700999637::0::1::::<>CharacterBody2D<>::
 paper.png::CompressedTexture2D::4715692137000109659::1700966880::1700966880::1::::<><>::
-paper.tscn::PackedScene::6916122914886092991::1701000755::0::1::::<><>::res://paper/Paper.gd<>uid://b8gk04fxetjux::::res://paper/paper.png<>uid://m7bn44vf6vdj::::res://paper/paperperspective.png
+paper.tscn::PackedScene::6916122914886092991::1701000968::0::1::::<><>::res://paper/Paper.gd<>uid://b8gk04fxetjux::::res://paper/paper.png<>uid://m7bn44vf6vdj::::res://paper/paperperspective.png
 paperperspective.png::CompressedTexture2D::908411713038382187::1700988281::1700988281::1::::<><>::
 purplestamp.tscn::PackedScene::4991628295232480900::1700993362::0::1::::<><>::uid://cx23132dartmk
 redstamp.tscn::PackedScene::2462388963586557062::1700993362::0::1::::<><>::uid://dml2hgn46mhva
