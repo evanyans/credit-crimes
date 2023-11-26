@@ -19,9 +19,12 @@ var case
 var timer
 var shiftbar
 var quota
+var animator
 
 func _ready():
 	quota = $QUOTA
+	animator = $AnimationPlayer
+	animator.play("tutorialA")
 	$AudioStreamPlayer2D.play()
 	timer = get_node("Timer")
 	shiftbar = get_node("ShiftBar")
@@ -35,9 +38,14 @@ func _ready():
 
 func _physics_process(delta):
 	#print(timer.time_left)
-	shiftbar.value = (timer.time_left/600)*10000
+	shiftbar.value = (timer.time_left/240)*10000
+	if Globalprices.firsttime:
+		Globalprices.firsttime = false
+		$DragPaper.visible = false
+		animator.play("tutorialB")
 
 func next_case(choice):
+	$TaxReport.visible = false
 	Globalprices.currentstage += 1
 	current_state = current_state +1
 	if current_state < 4:

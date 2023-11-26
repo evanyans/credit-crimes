@@ -7,7 +7,6 @@ var newPosition = Vector2()
 
 var mouse_in = false
 var ischosen = false
-
 var animator
 @export var text : PackedScene
 @export var logo : PackedScene
@@ -27,6 +26,9 @@ func give_template(formtype):
 
 func _input(event):
 	if event is InputEventMouseButton:
+		if Globalprices.firste:
+			Globalprices.firsttime = true
+			Globalprices.firste = false
 		if chosen and event.is_pressed() && mouse_in:
 			draggingDistance = position.distance_to(get_viewport().get_mouse_position())
 			dir = (get_viewport().get_mouse_position() - position).normalized()

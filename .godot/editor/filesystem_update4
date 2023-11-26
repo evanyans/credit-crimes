@@ -3,3 +3,8 @@ res://button.tres
 res://computer.gd
 res://game.tscn
 res://globalprices.gd
+res://game.gd
+res://paper/paper.tscn
+res://paper/Paper.gd
+res://endscreen/endscreen.tscn
+res://endscreen/endscreen.gd

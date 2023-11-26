@@ -13,7 +13,6 @@ func _ready():
 	$Stage3/Post1.visible = false
 
 func _physics_process(delta):
-	print(Globalprices.currentstage)
 	if runOnce && Globalprices.currentstage == 2:
 		runOnce = false
 		$AudioStreamPlayer2D.play()
@@ -27,6 +26,7 @@ func _physics_process(delta):
 func stage3instagram(viewport, event, shape_idx):
 	if (Globalprices.currentstage == 2 && event is InputEventMouseButton && event.pressed):
 		sprite.frame = 3
+		$Click.play()
 		$mark.visible = false
 		$Stage3/Instagram/CollisionShape2D.disabled = true
 		
@@ -37,6 +37,7 @@ func stage3instagram(viewport, event, shape_idx):
 
 func openigpost1(viewport, event, shape_idx):
 	if (Globalprices.currentstage == 2 && event is InputEventMouseButton && event.pressed):
+		$Click.play()
 		$Stage3/Post1.visible = true
 		$Stage3/IGPost1/CollisionShape2D.disabled = true
 		$Stage3/Post1/ReturnToIGPost/CollisionShape2D.disabled = false
@@ -44,6 +45,7 @@ func openigpost1(viewport, event, shape_idx):
 
 func returntoigpost1(viewport, event, shape_idx):
 	if (Globalprices.currentstage == 2 && event is InputEventMouseButton && event.pressed):
+		$Click.play()
 		$Stage3/Post1.visible = false
 		$Stage3/Post1/ReturnToIGPost/CollisionShape2D.disabled = true
 		$Stage3/IGPost1/CollisionShape2D.disabled = false
@@ -52,6 +54,7 @@ func returntoigpost1(viewport, event, shape_idx):
 
 func openigpost2(viewport, event, shape_idx):
 	if (Globalprices.currentstage == 2 && event is InputEventMouseButton && event.pressed):
+		$Click.play()
 		$Stage3/Post2.visible = true
 		$Stage3/IGPost2/CollisionShape2D.disabled = true
 		$Stage3/Post2/ReturnToIGPost/CollisionShape2D.disabled = false
@@ -59,6 +62,7 @@ func openigpost2(viewport, event, shape_idx):
 
 func returntoigpost2(viewport, event, shape_idx):
 	if (Globalprices.currentstage == 2 && event is InputEventMouseButton && event.pressed):
+		$Click.play()
 		$Stage3/Post2.visible = false
 		$Stage3/Post2/ReturnToIGPost/CollisionShape2D.disabled = true
 		$Stage3/IGPost2/CollisionShape2D.disabled = false
