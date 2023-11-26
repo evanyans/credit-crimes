@@ -1,40 +1,50 @@
-[gd_scene load_steps=9 format=3 uid="uid://xysorl0yuw36"]
+[gd_scene load_steps=11 format=3 uid="uid://xysorl0yuw36"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_qab73"]
 [ext_resource type="PackedScene" uid="uid://bc2x2vq2y53sx" path="res://paper_getter.tscn" id="1_vrwev"]
-[ext_resource type="Texture2D" uid="uid://o4dlek05oo0q" path="res://background/bg_empty_bar.png" id="2_dpogv"]
-[ext_resource type="Texture2D" uid="uid://bo577qp2ib5dj" path="res://progressbar/emptyprogress.png" id="2_wca6n"]
-[ext_resource type="Texture2D" uid="uid://dhxc37qvp1h0t" path="res://progressbar/progress.png" id="3_7ht6d"]
+[ext_resource type="Texture2D" uid="uid://8v4x2oi5lcu3" path="res://background/bg_empty_bar (1).png" id="2_1n02s"]
+[ext_resource type="Texture2D" uid="uid://b2nfsv46ysahg" path="res://progressbar/progressempty.png" id="3_l0547"]
 [ext_resource type="Theme" uid="uid://bogu2qbnnilwk" path="res://font.tres" id="3_syc0i"]
+[ext_resource type="Texture2D" uid="uid://c2tt1b1abh7xp" path="res://progressbar/progressfull.png" id="4_i0rjo"]
 [ext_resource type="PackedScene" uid="uid://rdemom264ym" path="res://shrink_zone.tscn" id="5_ogmhs"]
-[ext_resource type="Texture2D" uid="uid://scagkruh76y0" path="res://background/offlaptop.png" id="8_25nl5"]
+[ext_resource type="Texture2D" uid="uid://cdlblbcp62cr2" path="res://background/newlaptop.png" id="7_r2k5a"]
+
+[sub_resource type="Gradient" id="Gradient_jogfv"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_k3clg"]
+gradient = SubResource("Gradient_jogfv")
 
 [node name="Game" type="Node2D"]
-scale = Vector2(1.02174, 1.2)
 script = ExtResource("1_qab73")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(188.052, 89.875)
-scale = Vector2(0.978009, 0.834491)
-texture = ExtResource("2_dpogv")
+position = Vector2(192.137, 107.875)
+scale = Vector2(0.999286, 1.00116)
+texture = ExtResource("2_1n02s")
 
 [node name="ShiftBar" type="TextureProgressBar" parent="."]
-visible = false
-offset_right = 384.0
-offset_bottom = 30.0
-max_value = 600.0
+offset_left = 5.0
+offset_top = 3.0
+offset_right = 380.0
+offset_bottom = 15.0
+max_value = 10000.0
+value = 10000.0
 fill_mode = 1
-texture_under = ExtResource("2_wca6n")
-texture_progress = ExtResource("3_7ht6d")
+texture_under = ExtResource("3_l0547")
+texture_progress = ExtResource("4_i0rjo")
+texture_progress_offset = Vector2(13, 1)
 
 [node name="Timer" type="Timer" parent="."]
+process_callback = 0
 wait_time = 600.0
 
 [node name="Decisions" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 12.0
+offset_top = 40.0
+offset_right = 52.0
+offset_bottom = 80.0
 
 [node name="Yes" type="Button" parent="Decisions"]
 layout_mode = 0
@@ -71,15 +81,22 @@ position = Vector2(1076, 1323)
 scale = Vector2(0.888371, 1.00716)
 
 [node name="ShrinkZone2" parent="." instance=ExtResource("5_ogmhs")]
-position = Vector2(299.489, 137.5)
+position = Vector2(309, 182)
 
 [node name="ShrinkZone" parent="." instance=ExtResource("5_ogmhs")]
-position = Vector2(75.3617, 140)
+position = Vector2(70, 181)
 
 [node name="Offlaptop" type="Sprite2D" parent="."]
-position = Vector2(190.851, 74.1667)
-scale = Vector2(0.798878, 0.798878)
-texture = ExtResource("8_25nl5")
+visible = false
+position = Vector2(194, 101)
+scale = Vector2(0.822127, 0.726286)
+texture = ExtResource("7_r2k5a")
+
+[node name="PointLight2D" type="PointLight2D" parent="Offlaptop"]
+visible = false
+position = Vector2(-1.21635, -17.2108)
+scale = Vector2(1.90056, 1.35535)
+texture = SubResource("GradientTexture2D_k3clg")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="Decisions/Yes" to="." method="_on_yes_pressed"]

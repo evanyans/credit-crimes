@@ -8,6 +8,11 @@ var newPosition = Vector2()
 var mouse_in = false
 var ischosen = false
 
+var animator
+
+func _ready():
+	animator = get_node("AnimatedSprite2D")
+
 func give_template(formtype):
 	add_child(formtype)
 
@@ -44,12 +49,12 @@ func mouse_exited():
 
 func _on_shrink_detector_area_entered(area):
 	#later, instead of changing the scale, just change the animation/sprite
-	scale.x = 0.05
-	scale.y = 0.05
-	pass # Replace with function body.
+	if area.name == "ShrinkZone2":
+		scale.x= -1
+	animator.frame= 0
 
 
 func _on_shrink_detector_area_exited(area):
-	scale.x = 0.4
-	scale.y = 0.4
-	pass # Replace with function body.
+	if area.name == "ShrinkZone2":
+		scale.x= -1
+	animator.frame= 1

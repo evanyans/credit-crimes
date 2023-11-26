@@ -17,3 +17,5 @@ position = Vector2(121, 131)
 
 [node name="Paper4" parent="." instance=ExtResource("2_ikhix")]
 position = Vector2(295, 116)
+
+[editable path="Paper4"]

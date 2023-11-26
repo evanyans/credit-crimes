@@ -1,0 +1,12 @@
+res://game.tscn
+res://paper/paper.tscn
+res://cases/case2.tscn
+res://endscreen.tscn
+res://shrink_zone.tscn
+res://game.gd
+res://endscreen/endscreen.tscn
+res://endscreen/endscreen.gd
+res://transition_screen.tscn
+res://TransitionScreen.gd
+res://scene_manager.gd
+res://scene_manager.tscn
