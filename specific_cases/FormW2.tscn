@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://3tplfrs3yu3x"]
 
-[ext_resource type="Theme" uid="uid://bogu2qbnnilwk" path="res://font.tres" id="1_ksa7x"]
+[ext_resource type="Theme" uid="uid://bogu2qbnnilwk" path="res://themes/font.tres" id="1_ksa7x"]
 
 [node name="FormW2" type="Control"]
 layout_mode = 3

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dq6if7x0x2p73"]
 
-[ext_resource type="Theme" uid="uid://bogu2qbnnilwk" path="res://font.tres" id="1_vlgec"]
+[ext_resource type="Theme" uid="uid://bogu2qbnnilwk" path="res://themes/font.tres" id="1_vlgec"]
 
 [sub_resource type="Image" id="Image_y54h4"]
 data = {
